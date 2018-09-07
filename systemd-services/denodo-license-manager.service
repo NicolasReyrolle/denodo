@@ -1,0 +1,13 @@
+[Unit]
+Description=Denodo License Manager
+After=network.target
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/solution-manager/bin/licensemanager_startup.sh
+ExecStop=/home/denodo/solution-manager/bin/licensemanager_shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
+
