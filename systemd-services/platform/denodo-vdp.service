@@ -1,0 +1,12 @@
+[Unit]
+Description=Denodo Virtual DataPort
+After=network.target
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/platform/bin/vqlserver.sh startup
+ExecStop=/home/denodo/platform/bin/vqlserver.sh shutdown
+
+[Install]
+WantedBy=multi-user.target

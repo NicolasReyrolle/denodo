@@ -1,0 +1,13 @@
+[Unit]
+Description=Denodo Data Catalog
+After=network.target
+Requires=denodo-vdp.service
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/platform/bin/datacatalog_startup.sh
+ExecStop=/home/denodo/platform/bin/datacatalog_shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
