@@ -1,0 +1,13 @@
+[Unit]
+Description=Denodo Virtual DataPort
+After=network.target
+Requires=denodo-license-manager.service
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/solution-manager/bin/vqlserver.sh startup
+ExecStop=/home/denodo/solution-manager/bin/vqlserver.sh shutdown
+
+[Install]
+WantedBy=multi-user.target

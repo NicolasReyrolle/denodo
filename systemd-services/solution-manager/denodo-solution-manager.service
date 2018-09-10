@@ -1,0 +1,13 @@
+[Unit]
+Description=Denodo Solution Manager
+After=network.target
+Requires=denodo-license-manager.service denodo-vdp.service
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/solution-manager/bin/solutionmanager_startup.sh
+ExecStop=/home/denodo/solution-manager/bin/solutionmanager_shutdown.sh
+
+[Install]
+WantedBy=multi-user.target

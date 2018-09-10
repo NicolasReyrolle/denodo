@@ -1,0 +1,14 @@
+[Unit]
+Description=Denodo Solution Manager Administration tool
+After=network.target
+Requires=denodo-solution-manager.service
+
+[Service]
+Type=forking
+User=denodo
+ExecStart=/home/denodo/solution-manager/bin/solutionmanagerwebtool_startup.sh
+ExecStop=/home/denodo/solution-manager/bin/solutionmanagerwebtool_shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
+
